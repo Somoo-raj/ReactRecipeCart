@@ -1,0 +1,249 @@
+/* Center the cart page and limit its width for comfortable reading. */
+.cart-page {
+    box-sizing: border-box;
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 32px 24px;
+    text-align: left;
+}
+
+/* Align the page title and item count in one row. */
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+/* Style the main page heading with a responsive font size. */
+.cart-header h1 {
+    margin: 0;
+    font-size: clamp(28px, 5vw, 40px);
+    letter-spacing: -0.8px;
+}
+
+/* Style the small label above the page title. */
+.cart-eyebrow {
+    margin: 0 0 4px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Display the cart item count as a pill-shaped badge. */
+.cart-count {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text-h);
+    font-size: 14px;
+}
+
+/* Give the cart and product sections a shared card appearance. */
+.cart-section,
+.products-section {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+}
+
+/* Arrange each cart item in a row with a divider below it. */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Set consistent heading styles for cart items and the products section. */
+.cart-item-info h2,
+.products-section > h2 {
+    margin: 0 0 6px;
+    color: var(--text-h);
+    font-size: 18px;
+}
+
+/* Use the standard text color and size for item details and the empty message. */
+.cart-item-info p,
+.cart-empty {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* Place the item price and quantity controls side by side. */
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Keep prices readable and prevent them from wrapping. */
+.cart-item-actions strong,
+.cart-total strong {
+    color: var(--text-h);
+    white-space: nowrap;
+}
+
+/* Share sizing, borders, typography, and pointer behavior across buttons. */
+.button,
+.product-button {
+    min-height: 42px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Show a visible keyboard-focus indicator on interactive buttons. */
+.button:focus-visible,
+.product-button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Highlight product buttons when the pointer is over them. */
+.product-button:hover {
+    border-color: var(--accent-border);
+    background: var(--accent-bg);
+}
+
+/* Align quantity buttons and the current quantity in a compact row. */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-h);
+    font-weight: 600;
+}
+
+/* Make each quantity control a consistently sized square button. */
+.quantity-button {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-h);
+    background: var(--bg);
+    font: inherit;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Highlight quantity buttons on hover. */
+.quantity-button:hover {
+    border-color: var(--accent-border);
+    background: var(--accent-bg);
+}
+
+/* Keep keyboard focus visible on quantity buttons. */
+.quantity-button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Add spacing around the empty-cart message. */
+.cart-empty {
+    padding: 8px 0 20px;
+}
+
+/* Place the total label and amount at opposite ends of the row. */
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+    color: var(--text-h);
+    font-size: 18px;
+}
+
+/* Make the clear-cart button span the available section width. */
+.button-clear {
+    width: 100%;
+    color: var(--text);
+    background: transparent;
+}
+
+/* Indicate that the clear-cart button is unavailable when the cart is empty. */
+.button-clear:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Separate the product list from the cart section. */
+.products-section {
+    margin-top: 20px;
+}
+
+/* Arrange products in three evenly sized columns on wider screens. */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+/* Stack product details vertically within each product button. */
+.product-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: 0;
+    color: var(--text-h);
+    background: var(--bg);
+    text-align: left;
+}
+
+/* Emphasize the add-to-cart prompt on product buttons. */
+.product-add {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Simplify the layout for narrow screens. */
+@media (max-width: 560px) {
+    /* Reduce page padding on small devices. */
+    .cart-page {
+        padding: 24px 16px;
+    }
+
+    /* Reduce card padding to preserve space for content. */
+    .cart-section,
+    .products-section {
+        padding: 16px;
+    }
+
+    /* Stack cart item details and actions vertically. */
+    .cart-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Keep the item price and quantity controls on opposite ends. */
+    .cart-item-actions {
+        justify-content: space-between;
+    }
+
+    /* Show one product per row on narrow screens. */
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Lay out each product's details horizontally on narrow screens. */
+    .product-button {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
