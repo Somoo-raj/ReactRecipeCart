@@ -48,6 +48,6 @@ Deployed using Vercel.
 
 👨‍💻 Author
 
-Somoo-raj
+Sonu Kumar
 
 Built with React ❤️
