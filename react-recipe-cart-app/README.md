@@ -28,7 +28,7 @@ A responsive shopping cart application built using React.
 
 1. Clone the repository:
 
-git clone https://github.com/Somoo-raj/ReactRecipeCart.git
+git clone (https://github.com/Somoo-raj/ReactRecipeCart.git)
 
 2. Navigate to the project folder:
 
